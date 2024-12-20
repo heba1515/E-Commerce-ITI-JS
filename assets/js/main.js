@@ -125,10 +125,21 @@ fetchProducts();
 
 //        * Add to cart
 const addToCart = (id) => {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const loggedInUser = localStorage.getItem('loggedInUser'); // جلب اسم المستخدم
+  if (!loggedInUser) {
+    alert("Please login to add items to the cart.");
+    return;
+  }
+
+  // جلب السلة الخاصة بالمستخدم الحالي، وإذا لم توجد يتم إنشاء سلة فارغة
+  let cart = JSON.parse(localStorage.getItem(`${loggedInUser}-cart`)) || [];
+
+  // إضافة المنتج إذا لم يكن موجودًا بالفعل
   if (!cart.includes(id)) cart.push(id);
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+  // تخزين السلة الخاصة بالمستخدم في localStorage
+  localStorage.setItem(`${loggedInUser}-cart`, JSON.stringify(cart));
+
   alert("Product added to the cart");
 };
 
