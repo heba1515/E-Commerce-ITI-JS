@@ -4,44 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
-    <link rel="stylesheet" href="../assets/css/products.css">
-    <link rel="stylesheet" href="../assets/fontawesome-free-6.7.1-web/css/all.min.css" />
+    <title>Singl Product</title>
+    <link rel="stylesheet" href="../assets/css/singleProduct.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
 
 <body>
     <!-- Header Section -->
     <header id="header" class="header">
-        <!-- Topbar -->
-        <div class="topbar">
-            <div class="topbar-content">
-                <div class="top-contact">
-                    <ul>
-                        <li>
-                            <i style="color: #1a76d1; margin-right: 8px" class="fa fa-phone"></i>+880 1234 56789
-                        </li>
-                        <li>
-                            <i style="color: #1a76d1; margin-right: 8px" class="fa fa-envelope"></i>
-                            <a href="mailto:ahmedmostafaabdel3azem@gmail.com">support@yourmail.com</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="nav-links" class="get-quote">
-                    <a href="./Auth/Login.html" id="login-link" class="btn-Reg">Login</a>
-                    <a href="./Auth/Register.html" id="register-link" class="btn-Reg">Register</a>
-                    <a href="#" id="dashboard-link" class="btn-Reg" style="display: none"></a>
-                    <a href="#" id="logout-btn" class="btn-Reg" style="display: none">
-                        Logout
-                    </a>
-                </div>
-            </div>
-        </div>
 
         <!-- Header Inner -->
         <div class="header-inner">
@@ -85,78 +58,96 @@
         </div>
     </header>
 
-
-    <!-- Products Section -->
+    <!-- Product Section -->
     <main>
-        <div class="hero">
-            <h2>Enjoy Your Shopping</h2>
-            <p>Save more with coupons & up to 70% off!</p>
-        </div>
-        <div class="container">
-            <!-- Categories aside -->
-            <div class="sidebar-container">
-                <div id="sidebar">
-                    <div class="title">
-                        <h5>Category</h5>
+        <div class="product-details">
+            <div class="product-img"></div>
+            <div class="details">
+                <div class="details-content">
+                    <h2 class="product-title"></h2>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fa fa-star" data-value="1"></i>
+                            <i class="fa fa-star" data-value="2"></i>
+                            <i class="fa fa-star" data-value="3"></i>
+                            <i class="fa fa-star" data-value="4"></i>
+                            <i class="fa fa-star" data-value="5"></i>
+                        </div>
+                        <span></span>
                     </div>
-                    <div class="categories">
-                        <ul>
-                            <!-- <li>
-                                <h3 onclick="getByCategory('electronics')">Electronics</h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('jewelery')">Jewelery</h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('men\'s clothing')">Men's clothing</h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('women\'s clothing')">Women's clothing</h3>
-                            </li> -->
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="primary-color"></span>
+                            <span class="second-color"></span>
+                        </div>
+                    </div>
+                    <div class="product-discription">
 
-                            <li>
-                                <h3 onclick="getByCategory('home-decoration')">Home Decoration</h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('furniture')">Furniture</h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('sports-accessories')">Sports Accessories</h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('womens-watches')">Womens Watches</h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('womens-shoes')">Womens Shoes </h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('womens-dresses')">Womens Dresses</h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('womens-jewellery')">Womens Jewellery</h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('sunglasses')">Sunglasses </h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('smartphones')"> Smart Phones</h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('beauty')">Beauty</h3>
-                            </li>
-                            <li>
-                                <h3 onclick="getByCategory('motorcycle')">Motorcycle</h3>
-                            </li>
+                    </div>
+                    <div class="product-size">
+                        <strong>Size: </strong>
+                        <ul>
+                            <li><a href="#">xs</a></li>
+                            <li><a href="#" class="active-size">s</a></li>
+                            <li><a href="#">M</a></li>
+                            <li><a href="#">L</a></li>
+                            <li><a href="#">xL</a></li>
                         </ul>
+                    </div>
+                    <div class="extra-link">
+                        <div class="extra-link1">
+                            <input type="number" name="quantity" value="1" min="1" maxlength="3">
+                        </div>
+                        <div class="extra-link2">
+                            <button class="btn1" type="submit" onclick="addToCart()">
+                                <i class="fal fa-shopping-cart cart"></i>
+                                Add to cart
+                            </button>
+                            <button class="btn2" type="submit" onclick="addToWishList()">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- <div class="product-info">
+            <div class="product-info-nav">
+                <ul>
+                    <li><a href="#Description">Description</a></li>
+                    <li><a href="#Additional-Info">Additional Info</a></li>
+                    <li><a href="#Vendor">Vendor</a></li>
+                    <li><a href="#Reviews">Reviews (3)</a></li>
+                </ul>
+                <div class="content">
+                    <div class="active" id="Description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, reiciendis.</p>
+                    </div>
+                    <div id="Additional-Info">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, reiciendis.</p>
+                    </div>
+                    <div id="Vendor">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, reiciendis.</p>
+                    </div>
+                    <div id="Reviews">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, reiciendis.</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="related-products">
+            <div class="section-title">
+                <h2>Related Products</h2>
+            </div>
+            <div class="section-products">
+                <button class="prev" onclick="moveSlide(-1)">&#8249;</button>
+                <div class="section-products-row">
 
-            <!-- Products section -->
-            <div id="product-container"></div>
+                </div>
+                <button class="next" onclick="moveSlide(1)">&#8250;</button>
+            </div>
         </div>
     </main>
-
 
     <!-- Footer Section -->
     <footer class="footer">
@@ -218,8 +209,8 @@
     </footer>
     </div>
 
-    <script src="https://kit.fontawesome.com/0ce4cbaad9.js" crossorigin="anonymous"></script>
-    <script src="../assets/js/Customer/Products.js"></script>
+
+    <script src="../assets/js/Customer/SingleProduct.js"></script>
 </body>
 
 </html>
