@@ -805,6 +805,12 @@ Preloader Area CSS
     object-fit: cover;
 }
 
+
+.wishlist-added i{
+    background-color: var(--primary) !important;
+    color: #fff !important;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

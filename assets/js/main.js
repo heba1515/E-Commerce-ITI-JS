@@ -123,32 +123,76 @@ const fetchProducts = async () => {
 
 fetchProducts();
 
-//        * Add to cart
-const addToCart = (id) => {
-  const loggedInUser = localStorage.getItem('loggedInUser'); // جلب اسم المستخدم
-  if (!loggedInUser) {
-    alert("Please login to add items to the cart.");
-    return;
+
+// Add a product to the cart
+function addToCart(productId) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Check if the product is already in the cart
+  if (!cart.includes(productId)) {
+      cart.push(productId);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`Product added to cart successfully!`);
+  } else {
+      alert(`Product is already in your cart!`);
   }
+}
 
-  // جلب السلة الخاصة بالمستخدم الحالي، وإذا لم توجد يتم إنشاء سلة فارغة
-  let cart = JSON.parse(localStorage.getItem(`${loggedInUser}-cart`)) || [];
+// Add a product to the wishlist
+function addToWishList(productId) {
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-  // إضافة المنتج إذا لم يكن موجودًا بالفعل
-  if (!cart.includes(id)) cart.push(id);
+  // Check if the product is already in the wishlist
+  if (!wishlist.includes(productId)) {
+      wishlist.push(productId);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
 
-  // تخزين السلة الخاصة بالمستخدم في localStorage
-  localStorage.setItem(`${loggedInUser}-cart`, JSON.stringify(cart));
+      // Update button style
+      updateWishlistButtonStyle(productId, true);
 
-  alert("Product added to the cart");
-};
+      alert(`Product added to wishlist successfully!`);
+  } else {
+      updateWishlistButtonStyle(productId, false);
+      alert(`Product is already in your wishlist!`);
+  }
+}
 
 
-//          * Add to Wish List
-const addToWishList = (id) => {
-  let wishList = JSON.parse(localStorage.getItem("wishList")) || [];
-  if (!wishList.includes(id)) wishList.push(id);
+function updateWishlistButtonStyle(productId, isAdded) {
+  const button = document.querySelector(`button[data-wishlist-id="${productId}"]`);
+  if (isAdded) {
+      button.classList.add("wishlist-added");
+  } else {
+      button.classList.remove("wishlist-added");
+  }
+}
 
-  localStorage.setItem("wishList", JSON.stringify(wishList));
-  alert("Product added to the Wish List");
-};
+// //        * Add to cart
+// const addToCart = (id) => {
+//   const loggedInUser = localStorage.getItem('loggedInUser'); // جلب اسم المستخدم
+//   if (!loggedInUser) {
+//     alert("Please login to add items to the cart.");
+//     return;
+//   }
+
+//   // جلب السلة الخاصة بالمستخدم الحالي، وإذا لم توجد يتم إنشاء سلة فارغة
+//   let cart = JSON.parse(localStorage.getItem(`${loggedInUser}-cart`)) || [];
+
+//   // إضافة المنتج إذا لم يكن موجودًا بالفعل
+//   if (!cart.includes(id)) cart.push(id);
+
+//   // تخزين السلة الخاصة بالمستخدم في localStorage
+//   localStorage.setItem(`${loggedInUser}-cart`, JSON.stringify(cart));
+
+//   alert("Product added to the cart");
+// };
+
+
+// //          * Add to Wish List
+// const addToWishList = (id) => {
+//   let wishList = JSON.parse(localStorage.getItem("wishList")) || [];
+//   if (!wishList.includes(id)) wishList.push(id);
+
+//   localStorage.setItem("wishList", JSON.stringify(wishList));
+//   alert("Product added to the Wish List");
+// };
